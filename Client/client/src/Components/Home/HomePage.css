@@ -1,0 +1,30 @@
+/* src/HomePage.css */
+.home-container {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+    min-height: 100vh; /* Full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section {
+    padding: 50px 20px;
+}
+
+.overview-section {
+    padding: 20px;
+    max-width: 800px;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Bootstrap primary color */
+    border-color: #007bff;
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Bootstrap secondary color */
+    border-color: #6c757d;
+}
