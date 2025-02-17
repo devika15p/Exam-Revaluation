@@ -9,6 +9,7 @@ import Header from './Components/Header';
 import Requestform from './Components/Request/Requestform';
 import Registration from './Components/Student/Registration';
 import Contact from './Screencomponents/Contactcomponents/Contact';
+import Trackingform from './Components/Tracking/Trackingform';
 function App() {
   return (
     <>
@@ -20,8 +21,8 @@ function App() {
           <Route path='/contact' element={<Contact/>} />
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Registration/>}/>
-          <Route path='/request' element={<Requestform/>}/>          
-
+          <Route path='/request' element={<Requestform/>}/>
+          <Route path='/tracking' element={<Trackingform/>}/>
         </Routes>
       </BrowserRouter>
       {/* <Registration/> */}

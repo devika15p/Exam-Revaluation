@@ -1,0 +1,54 @@
+/* ContactPage.css */
+.contact-page {
+    /*background-image: url("../Assests/contact.jpg");*/
+    background-size: cover; 
+    backdrop-filter: blur(5px); /* Adjust blur radius as needed */
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;  
+    justify-content: center; 
+    padding: 20px 0; 
+}
+
+.contact-page .card {
+    background-color: #333;
+    color: #fff;
+    border: none; 
+}
+
+.contact-page .card-header {
+    background-color: #555;
+    border-bottom: none;
+}
+
+.contact-page .form-control {
+    background-color: #444;
+    color: #fff;
+    border: none;
+}
+
+.contact-page .form-control:focus {
+    background-color: #555;
+    color: #fff;
+    border-color: #777; /* Subtle border on focus */
+    box-shadow: none;
+}
+
+.contact-page .btn-primary {
+    background-color: #007bff; /* Keep primary blue */
+    border-color: #007bff;
+}
+
+.contact-page .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+
+.contact-page .alert-success, .contact-page .alert-danger {
+    background-color: #444;
+    color: #fff;
+    border: none;
+}
