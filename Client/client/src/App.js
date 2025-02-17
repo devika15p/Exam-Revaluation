@@ -5,6 +5,7 @@ import Home from "./Screencomponents/Homecomponents/Home"
 import About from './Screencomponents/Aboutcomponents/About'
 import Login from './Components/Student/Login';
 import Header from './Components/Header';
+import Footer from './Components/Footer'
 //import Footer from './Components/Footer';
 import Requestform from './Components/Request/Requestform';
 import Registration from './Components/Student/Registration';
@@ -24,6 +25,7 @@ function App() {
           <Route path='/request' element={<Requestform/>}/>
           <Route path='/tracking' element={<Trackingform/>}/>
         </Routes>
+        <Footer/> 
       </BrowserRouter>
       {/* <Registration/> */}
     </>
