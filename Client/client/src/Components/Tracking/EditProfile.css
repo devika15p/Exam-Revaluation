@@ -1,0 +1,58 @@
+/* EditProfile.css */
+.edit-profile {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.edit-profile .card {
+    background-color: #333;
+    color: #fff;
+    border: none;
+}
+
+.edit-profile .card-header {
+    background-color: #555;
+    border-bottom: none;
+}
+
+.edit-profile .form-control {
+    background-color: #444;
+    color: #fff;
+    border: none;
+}
+
+.edit-profile .form-control:focus {
+    background-color: #555;
+    color: #fff;
+    border-color: #777;
+    box-shadow: none;
+}
+
+.edit-profile .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.edit-profile .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.edit-profile .alert-success,
+.edit-profile .alert-danger {
+    background-color: #444;
+    color: #fff;
+    border: none;
+}
+
+.loading,
+.error {
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+}

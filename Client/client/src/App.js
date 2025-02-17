@@ -11,6 +11,7 @@ import Requestform from './Components/Request/Requestform';
 import Registration from './Components/Student/Registration';
 import Contact from './Screencomponents/Contactcomponents/Contact';
 import Trackingform from './Components/Tracking/Trackingform';
+import EditProfile from './Components/Tracking/EditProfile';
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
           <Route path='/register' element={<Registration/>}/>
           <Route path='/request' element={<Requestform/>}/>
           <Route path='/tracking' element={<Trackingform/>}/>
+          <Route path='/editprofile' element={<EditProfile/>}/>
         </Routes>
         <Footer/> 
       </BrowserRouter>
