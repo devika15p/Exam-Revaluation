@@ -4,7 +4,7 @@ import './HomePage.css'; // Import custom CSS for additional styling
 
 const Mainpg = () => {
     return (
-        <div className="home-container">
+        <div className="home-container bg-black">
             <div className="hero-section text-center">
                 <h1 className="display-4">Welcome to the Exam Re-evaluation System</h1>
                 <p className="lead">Transparent and Efficient Exam Re-evaluation Process</p>

@@ -45,7 +45,7 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="bg-dark text-white py-5 min-vh-100">
+    <div className="bg-black text-white py-5 min-vh-100">
       <Container>
         <h2 className="text-center fw-bold mb-4">Frequently Asked Questions</h2>
         <Accordion defaultActiveKey="0" className="bg-dark">

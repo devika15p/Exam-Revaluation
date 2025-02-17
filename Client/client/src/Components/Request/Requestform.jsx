@@ -73,7 +73,7 @@ const RequestForm = () => {
   };
 
   return (
-    <div className="d-flex align-items-center justify-content-center bg-dark min-vh-100 mt-2">
+    <div className="d-flex align-items-center justify-content-center bg-black min-vh-100 mt-2">
       <Container>
         <Row className="justify-content-center">
           <Col md={8}>

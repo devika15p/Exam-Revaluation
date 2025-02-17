@@ -1,17 +1,3 @@
-/*import React from 'react'
-
-const Contactpage = () => {
-  return (
-    <div>
-      <h1>contact us</h1>
-    </div>
-  )
-}
-
-export default Contactpage*/
-
-
-
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ContactPage.css';

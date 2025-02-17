@@ -4,7 +4,7 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const Mission = () => {
   return (
-    <div className="bg-dark text-white py-5 mt-2">
+    <div className="bg-black text-white py-5 mt-2">
       <Container fluid className="px-4">
         <Row className="justify-content-center">
           <Col md={10} lg={8} className="text-center">
