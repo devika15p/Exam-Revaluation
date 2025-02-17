@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import './TrackingPage.css'; // Import custom CSS for black theme
 
 const Trackingform = () => {
-    const [id, setId] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
 
@@ -14,11 +14,11 @@ const Trackingform = () => {
         // to verify the ID and password and fetch tracking information.
         // For this example, we'll just simulate a response.
 
-        if (id === 'test' && password === 'password') { // Replace with your actual logic
+        if (email === 'test' && password === 'password') { // Replace with your actual logic
             setMessage('Tracking information found!'); // Or display the actual tracking data
             // Redirect or update component state with tracking data
         } else {
-            setMessage('Invalid ID or password.');
+            setMessage('Invalid email or password.');
         }
     };
 
@@ -34,13 +34,13 @@ const Trackingform = () => {
                             <div className="card-body">
                                 <form onSubmit={handleSubmit}>
                                     <div className="mb-3">
-                                        <label htmlFor="id" className="form-label">ID:</label>
+                                        <label htmlFor="email" className="form-label">Email</label>
                                         <input
-                                            type="text"
+                                            type="email"
                                             className="form-control"
-                                            id="id"
-                                            value={id}
-                                            onChange={(e) => setId(e.target.value)}
+                                            id="email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
                                             required
                                         />
                                     </div>
