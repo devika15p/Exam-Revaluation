@@ -6,13 +6,13 @@ import Adminregistration from "./Amincomponents/Adminregistration"
 
 function App() {
   return (
-    <Router>
+    {/*<Router>
       <Routes>
-        <Route path="/" element={<Adminlogin />} />
+         <Route path="/" element={<Adminlogin />} />
         <Route path="/admindashboard" element={<Admindashboard/>} />
         <Route path='/adminregistration' element={<Adminregistration/>}/>
       </Routes>
-    </Router>
+    </Router>*/}
   );
 }
 

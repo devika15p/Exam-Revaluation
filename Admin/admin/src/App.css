@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+
+body {
+  background-color: #121212;
+  color: #fff;
+}
+
+.content-wrapper {
+  flex: 1;
+  background-color: #1e1e1e;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.card {
+  background-color: #333;
+}
+
+.table {
+  background-color: #222;
+}
+
+.card-header, .table th {
+  background-color: #444;
+}
