@@ -1,61 +1,57 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const ViewRegistration = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        collegeName: '',
-        branchName: '',
-        subject: '',
-        password: ''
-    });
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Form Data Submitted:', formData);
-        // You can add your form submission logic here
-    };
-
-    return (
-        <div className="container" style={{ backgroundColor: '#343a40', color: '#ffffff', padding: '20px', borderRadius: '5px', marginTop: '50px' }}>
-            <h2 className="text-center">Registration Form</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="name" className="form-label">Name</label>
-                    <input type="text" className="form-control" id="name" name="name" value={formData.name} onChange={handleChange} required />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email</label>
-                    <input type="email" className="form-control" id="email" name="email" value={formData.email} onChange={handleChange} required />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="collegeName" className="form-label">College Name</label>
-                    <input type="text" className="form-control" id="collegeName" name="collegeName" value={formData.collegeName} onChange={handleChange} required />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="branchName" className="form-label">Branch Name</label>
-                    <input type="text" className="form-control" id="branchName" name="branchName" value={formData.branchName} onChange={handleChange} required />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="subject" className="form-label">Subject</label>
-                    <input type="text" className="form-control" id="subject" name="subject" value={formData.subject} onChange={handleChange} required />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" className="form-control" id="password" name="password" value={formData.password} onChange={handleChange} required />
-                </div>
-                <button type="submit" className="btn btn-primary">Register</button>
-            </form>
-        </div>
-    );
-};
+function ViewRegistration() {
+  return (
+    <div>
+      <h3 style={{ textAlign: 'center', marginBottom: '20px', color: 'white' }}>View Registrations</h3>
+      <table className="table table-dark table-bordered" style={{ color: 'white' }}>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>College Name</th>
+            <th>Branch Name</th>
+            <th>Subject</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>johndoe@example.com</td>
+            <td>XYZ University</td>
+            <td>Computer Science</td>
+            <td>Mathematics</td>
+            <td>*******</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>janesmith@example.com</td>
+            <td>ABC College</td>
+            <td>Mechanical Engineering</td>
+            <td>Physics</td>
+            <td>*******</td>
+          </tr>
+          <tr>
+            <td>Michael Brown</td>
+            <td>michaelb@example.com</td>
+            <td>LMN Institute</td>
+            <td>Civil Engineering</td>
+            <td>Chemistry</td>
+            <td>*******</td>
+          </tr>
+          <tr>
+            <td>Emily Davis</td>
+            <td>emilydavis@example.com</td>
+            <td>PQR University</td>
+            <td>Electrical Engineering</td>
+            <td>Biology</td>
+            <td>*******</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+}
 
 export default ViewRegistration;
