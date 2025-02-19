@@ -1,7 +1,8 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const Register = require('./model');
+const {Register , Admin} = require('./model');
 require("dotenv").config();
+
 
 exports.register = async (req, res) => {
     console.log("Received Data:", req.body); // Debugging
@@ -72,3 +73,61 @@ exports.login = async (req, res) => {
         res.status(500).send('Server Error');
     }
 };
+
+exports.adminregister = async (req,res)=>{
+    const {name , email , password }= req.body;
+
+    try{
+        let admin = await Admin.findOne({email});
+        if (admin) {
+            return res.status(400).json({msg : "admin already exists"});
+        }
+
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password , salt);
+
+        admin = new Admin({
+            name,
+            email,
+            password: hashedPassword
+        });
+
+        await admin.save();
+
+        res.json({admin });
+    }
+
+    catch(error){
+        console.error(error.message);
+        res.send('server error');
+        }
+};
+
+exports.adminlogin = async (req,res) =>{
+    const {email , password} = req.body;
+
+    try{
+        let admin = await Admin.findOne({email})
+        if (!admin) {
+            return res.status(400).json({msg : "invaild email"})
+        }
+
+        const isMatch = await bcrypt.compare (password, admin.password)
+        if(!isMatch){
+            return res.status(400).json({ msg : "invalid password"})
+        }
+
+        const token = jwt.sign(
+            { adminID : admin._id},
+            process.env.JWT_SECRET,
+            {expiresIn:"2h"}
+        );
+
+        res.status(200).json({msg : "loggedin successfull", token})
+    }
+
+    catch (error){
+        console.error(error.message);
+        res.status(500).send('server error');
+    }
+}

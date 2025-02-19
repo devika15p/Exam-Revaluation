@@ -13,4 +13,13 @@ const registrationSchema = mongoose.Schema(
 
 const Register = mongoose.model('register', registrationSchema)
 
-module.exports = Register
+
+const adminSchema = mongoose.Schema({
+    name : String,
+    email : String,
+    password : String
+})
+
+const Admin = mongoose.model('admin', adminSchema)
+
+module.exports = {Register , Admin}
