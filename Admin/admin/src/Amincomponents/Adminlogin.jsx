@@ -28,7 +28,7 @@ function SimpleForm({ setIsLoggedIn }) {
       .then((response) => {
         alert('Login successful!');
         setIsLoggedIn(true);
-        navigate('/mainpage');
+        navigate('/admindashboard');
 
         if (response.data.token) {
           localStorage.setItem('token', response.data.token);
@@ -39,7 +39,7 @@ function SimpleForm({ setIsLoggedIn }) {
       })
       .catch((error) => {
         console.error('Error during login:', error);
-        setError('Invalid email or password. Please try again.');
+        // setError('Invalid email or password. Please try again.');
       });
   };
 
@@ -72,7 +72,7 @@ function SimpleForm({ setIsLoggedIn }) {
               />
             </Form.Group>
 
-            <Button variant="primary" type="submit" className="w-100" style={{ borderRadius: '6px' }}>
+            <Button variant="primary" type="submit" className="w-100" style={{ borderRadius: '6px' }}onClick={() => navigate('/admindashboard')}>
               Login
             </Button>
           </Form>

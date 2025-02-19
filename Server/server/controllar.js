@@ -74,17 +74,52 @@ exports.login = async (req, res) => {
     }
 };
 
-exports.adminregister = async (req,res)=>{
-    const {name , email , password }= req.body;
+// exports.adminregister = async (req,res)=>{
+//     const {name , email , password }= req.body;
 
-    try{
-        let admin = await Admin.findOne({email});
+//     try{
+//         let admin = await Admin.findOne({email});
+//         if (admin) {
+//             return res.status(400).json({msg : "admin already exists"});
+//         }
+
+//         const salt = await bcrypt.genSalt(10);
+//         const hashedPassword = await bcrypt.hash(password , salt);
+
+//         admin = new Admin({
+//             name,
+//             email,
+//             password: hashedPassword
+//         });
+
+//         await admin.save();
+
+//         res.json({admin });
+//     }
+
+//     catch(error){
+//         console.error(error.message);
+//         res.send('server error');
+//         }
+// };
+
+exports.adminregister = async (req, res) => {
+    console.log("Received Data:", req.body); // Debugging
+
+    const { name, email, password } = req.body;
+
+    if (!name || !email || !password) {
+        return res.status(400).json({ msg: "All fields are required" });
+    }
+
+    try {
+        let admin = await Admin.findOne({ email });
         if (admin) {
-            return res.status(400).json({msg : "admin already exists"});
+            return res.status(400).json({ msg: "Admin already exists" });
         }
 
         const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(password , salt);
+        const hashedPassword = await bcrypt.hash(password, salt);
 
         admin = new Admin({
             name,
@@ -94,13 +129,11 @@ exports.adminregister = async (req,res)=>{
 
         await admin.save();
 
-        res.json({admin });
+        res.json({ admin });
+    } catch (error) {
+        console.error("Error:", error.message);
+        res.status(500).json({ msg: "Server Error" });
     }
-
-    catch(error){
-        console.error(error.message);
-        res.send('server error');
-        }
 };
 
 exports.adminlogin = async (req,res) =>{
