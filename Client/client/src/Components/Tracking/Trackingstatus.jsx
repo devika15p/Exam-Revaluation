@@ -1,18 +1,15 @@
 import React from 'react';
 import { Table, Container, Row, Col, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 const TrackingStatusPage = () => {
+  const navigate = useNavigate(); // Initialize navigate
+
   const data = [
     { username: 'john_doe', subjectName: 'Math', applicationStatus: 'Pending' },
     { username: 'jane_smith', subjectName: 'Science', applicationStatus: 'Approved' },
     { username: 'susan_lee', subjectName: 'History', applicationStatus: 'Rejected' },
-   
   ];
-  const handlePaymentClick = () => {  // Define the function HERE, before you use it
-    // Your payment logic goes here
-    console.log("Payment button clicked!"); // Example
-    // ... any other code you need (API calls, state updates, etc.)
-  };
 
   return (
     <div style={{ backgroundColor: '#121212', minHeight: '100vh', color: '#fff' }}>
@@ -36,13 +33,15 @@ const TrackingStatusPage = () => {
                     <td>{row.username}</td>
                     <td>{row.subjectName}</td>
                     <td>{row.applicationStatus}</td>
-                    <td>{row.paperpdf}</td>
-                    <td>{row.rerequest}
-                    <Button variant="primary" onClick={() => handlePaymentClick()}>
-                    Go to Re-Request for Revaluation
-                  </Button>
+                    <td>{row.paperpdf || 'N/A'}</td>
+                    <td>
+                      <Button 
+                        variant="primary" 
+                        onClick={() => navigate('/tracking')}
+                      >
+                        Go to Re-Request for Revaluation
+                      </Button>
                     </td>
-
                   </tr>
                 ))}
               </tbody>
