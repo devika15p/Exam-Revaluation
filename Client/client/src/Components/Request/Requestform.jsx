@@ -297,6 +297,11 @@ const RequestForm = () => {
       });
   };
 
+  const handlePaymentClick = () => {  // Define the function HERE, before you use it
+    // Your payment logic goes here
+    console.log("Payment button clicked!"); // Example
+    // ... any other code you need (API calls, state updates, etc.)
+  };
   return (
     <div className="d-flex align-items-center justify-content-center bg-black min-vh-100 mt-2">
       <Container>
@@ -384,6 +389,8 @@ const RequestForm = () => {
                     ))}
                   </Form.Select>
                 </Form.Group>
+                <Button className="w-50"variant="primary" onClick={() => handlePaymentClick()}>
+                Go to Payment</Button>
 
                 {/* Submit Button */}
                 <div className="text-center">
@@ -396,6 +403,7 @@ const RequestForm = () => {
           </Col>
         </Row>
       </Container>
+      
     </div>
   );
 };

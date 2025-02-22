@@ -3,14 +3,11 @@ import { Container, Form, Table, FormGroup, FormCheck, Button } from 'react-boot
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TrackingForm() {
-  const questionNumbers = Array.from({ length: 8 }, (_, i) => `Question ${i + 1}`);
-
-  const handlePaymentClick = (questionNumber) => {
-    // Replace with your payment logic.
-    console.log(`Payment clicked for ${questionNumber}`);
-    alert(`Payment initiated for ${questionNumber}`);
-    // You can redirect to a payment gateway or perform other actions here.
-  };
+    const handlePaymentClick = () => {  // Define the function HERE, before you use it
+        // Your payment logic goes here
+        console.log("Payment button clicked!"); // Example
+        // ... any other code you need (API calls, state updates, etc.)
+      };
 
   return (
     <Container fluid className="bg-dark text-white p-4">
@@ -40,8 +37,8 @@ function TrackingForm() {
                   <Form.Control type="text" placeholder="Enter message" />
                 </td>
                 <td>
-                  <Button variant="primary" onClick={() => handlePaymentClick(question)}>
-                    Go to Payment
+                  <Button variant="primary" onClick={() => handlePaymentClick()}>
+                    Go to Payment 
                   </Button>
                 </td>
               </tr>
