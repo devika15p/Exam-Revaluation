@@ -7,6 +7,7 @@ import Adminregistration from "./Amincomponents/Adminregistration"
 import Dashboard from './Dashboardcomponents/Dashboard';
 import Viewregistration from './Amincomponents/Viewregistration'
 import Sidebar from './Dashboardcomponents/Sidebar';
+import ViewRequests from './Amincomponents/Viewrequest';
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <Sidebar />
             <Routes>
               <Route path='/viewregistration' element={<Viewregistration />} />
+              <Route path='/viewrequest' element={<ViewRequests />} />
               <Route path='/dashboard' element={<Dashboard />} />
 
             </Routes>
@@ -28,6 +30,7 @@ const App = () => {
             <Routes>
               <Route path='/' element={<Adminlogin setIsLoggedIn={setIsloggedIn} />} />
               <Route path='/adminregistration' element={<Adminregistration />} />
+              
             </Routes>
           </>
         )

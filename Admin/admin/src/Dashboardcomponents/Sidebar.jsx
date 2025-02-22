@@ -20,14 +20,13 @@ function Sidebar() {
                 <Link to="/viewregistration" className="text-white p-3 d-block text-decoration-none"><h5>View all registration</h5></Link>
               </li>
               <li>
-                <Link to="/results" className="text-white p-3 d-block text-decoration-none"><h5>View all request</h5></Link>
+                <Link to="/viewrequest" className="text-white p-3 d-block text-decoration-none"><h5>View all request</h5></Link>
               </li>
               <li>
                 <Link to="/" className="text-white p-3 d-block text-decoration-none"><h5>Logout</h5></Link>
               </li>
             </ul>
           </div>
-
         </Col>
       </Row>
     </Container>

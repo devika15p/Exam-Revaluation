@@ -39,5 +39,7 @@ router.post("/trackinglogin", allController.trackinglogin)
 // get student registration
 router.get("/getregistration", allController.getregistration)
 
+//get student request
+router.get("/getrequest" ,allController.getrequest)
 
 module.exports = router;

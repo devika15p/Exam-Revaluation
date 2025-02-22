@@ -32,7 +32,7 @@ const TrackingStatusPage = () => {
                     <td>{row.subjectName}</td>
                     <td>{row.applicationStatus}</td>
                     <td>{row.paperpdf}</td>
-                    <td>{row.re-request}</td>
+                    <td>{row.rerequest}</td>
 
                   </tr>
                 ))}

@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const {Register , Admin , Request} = require('./model');
+const { Register, Admin, Request } = require('./model');
 require("dotenv").config();
 
 // student registration
@@ -109,47 +109,47 @@ exports.adminregister = async (req, res) => {
 };
 
 // admin login
-exports.adminlogin = async (req,res) =>{
-    const {email , password} = req.body;
+exports.adminlogin = async (req, res) => {
+    const { email, password } = req.body;
 
-    try{
-        let admin = await Admin.findOne({email})
+    try {
+        let admin = await Admin.findOne({ email })
         if (!admin) {
-            return res.status(400).json({msg : "invaild email"})
+            return res.status(400).json({ msg: "invaild email" })
         }
 
-        const isMatch = await bcrypt.compare (password, admin.password)
-        if(!isMatch){
-            return res.status(400).json({ msg : "invalid password"})
+        const isMatch = await bcrypt.compare(password, admin.password)
+        if (!isMatch) {
+            return res.status(400).json({ msg: "invalid password" })
         }
 
         const token = jwt.sign(
-            { adminID : admin._id},
+            { adminID: admin._id },
             process.env.JWT_SECRET,
-            {expiresIn:"2h"}
+            { expiresIn: "2h" }
         );
 
-        res.status(200).json({msg : "loggedin successfull", token})
+        res.status(200).json({ msg: "loggedin successfull", token })
     }
 
-    catch (error){
+    catch (error) {
         console.error(error.message);
         res.status(500).send('server error');
     }
 }
 
 // Requestform for revaluation
-exports.requestform = async (req,res) => {
-    const { name , email, mobile , college , branch , subject , reason} = req.body;
+exports.requestform = async (req, res) => {
+    const { name, email, mobile, college, branch, subject, reason } = req.body;
 
-    try{
-        const requestform = new Request({ name , email , mobile , college , branch , subject , reason })
-        const data  = await requestform.save()
+    try {
+        const requestform = new Request({ name, email, mobile, college, branch, subject, reason })
+        const data = await requestform.save()
 
         res.send(data)
     }
 
-    catch(error){
+    catch (error) {
         res.send(error)
     }
 }
@@ -174,7 +174,7 @@ exports.trackinglogin = async (req, res) => {
         // Generate a JWT token
 
         const token = jwt.sign(
-            { trackinhloginId : trackinglogin._id },
+            { trackinhloginId: trackinglogin._id },
             process.env.JWT_SECRET, // Add a JWT_SECRET to your environment variables
             { expiresIn: '1h' }
         );
@@ -189,18 +189,34 @@ exports.trackinglogin = async (req, res) => {
 };
 
 // get student registration
+exports.getregistration = async (req, res) => {
+    try {
+        const student = await Register.find()
 
-exports.getregistration = async (req,res) =>{
-    try{
-    const student = await Register.find()
-
-    if (!student.length) {
-        return res.status (400).json({msg :"no student found"});
+        if (!student.length) {
+            return res.status(400).json({ msg: "no student found" });
+        }
+        res.json(student)
     }
-    res.json(student)
-}
-catch(error){
-    console.error(error.message)
-    res.status(500).send('server error')
-}
+    catch (error) {
+        console.error(error.message)
+        res.status(500).send('server error')
+    }
+};
+
+// get student request 
+exports.getrequest = async (req, res) => {
+    try {
+        const request = await Request.find()
+
+        if (!request.length) {
+            return res.status(400).json({ msg: "no request found" })
+        }
+        res.json(request)
+    }
+    catch (error) {
+        console.error(error.message)
+        res.status(500).send('server error')
+    }
+    
 }
