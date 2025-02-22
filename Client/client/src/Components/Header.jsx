@@ -42,7 +42,7 @@ const Header = () => {
                                 <small className="text-muted">johndoe@example.com</small>
                                 <Dropdown.Divider />
 
-                                <Button variant="primary" className="w-100 mb-2"><Nav.Link as={Link} to="/tracking" ><b>Tracking</b></Nav.Link></Button>
+                                <Button variant="primary" className="w-100 mb-2"><Nav.Link as={Link} to="/trackingstatus" ><b>Tracking</b></Nav.Link></Button>
                                 <Button variant="secondary" className="w-100 mb-2"><Nav.Link as={Link} to="/editprofile" ><b>Edit</b></Nav.Link></Button>
                                 <Button variant="danger" className="w-100"><Nav.Link as={Link} to="/login" ><b>Logout</b></Nav.Link></Button>
                             </Dropdown.Menu>

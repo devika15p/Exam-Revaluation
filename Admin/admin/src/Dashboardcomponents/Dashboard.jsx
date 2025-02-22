@@ -6,6 +6,7 @@ function Dashboard() {
     <Container>
       <Row>
         <Col lg={2}>
+        
         </Col>
         <Col lg={10}>
           <div className="dashboard-content">
