@@ -30,4 +30,14 @@ router.post("/login", allController.login);
 router.post("/adminregister", allController.adminregister);
 router.post("/adminlogin", allController.adminlogin);
 
+//Requestform route
+router.post("/requestform", allController.requestform)
+
+// teacking login
+router.post("/trackinglogin", allController.trackinglogin)
+
+// get student registration
+router.get("/getregistration", allController.getregistration)
+
+
 module.exports = router;

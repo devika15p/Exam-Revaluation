@@ -13,6 +13,7 @@ import Contact from './Screencomponents/Contactcomponents/Contact';
 import Trackingform from './Components/Tracking/Trackingform';
 import EditProfile from './Components/Tracking/EditProfile'
 import Chatbot from './Components/Student/Chatbot';
+import Trackingstatus from './Components/Tracking/Trackingstatus';
 function App() {
   return (
     <>
@@ -27,6 +28,7 @@ function App() {
           <Route path='/request' element={<Requestform/>}/>
           <Route path='/tracking' element={<Trackingform/>}/>
           <Route path='/editprofile' element={<EditProfile/>}/>
+          <Route path='/trackingstatus' element={<Trackingstatus/>}/>
         </Routes>
         <Footer/> 
         <Chatbot/>
