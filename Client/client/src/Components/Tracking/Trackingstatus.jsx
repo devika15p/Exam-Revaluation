@@ -21,6 +21,8 @@ const TrackingStatusPage = () => {
                   <th>Username</th>
                   <th>Subject Name</th>
                   <th>Application Status</th>
+                  <th>Paper PDF</th>
+                  <th>Re-Request for Revaluation</th>
                 </tr>
               </thead>
               <tbody>
@@ -29,6 +31,9 @@ const TrackingStatusPage = () => {
                     <td>{row.username}</td>
                     <td>{row.subjectName}</td>
                     <td>{row.applicationStatus}</td>
+                    <td>{row.paperpdf}</td>
+                    <td>{row.re-request}</td>
+
                   </tr>
                 ))}
               </tbody>
